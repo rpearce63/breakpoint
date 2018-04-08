@@ -26,21 +26,27 @@ class LoginVC: UIViewController {
         if emailField.text != nil && passwordField.text != nil {
             AuthService.instance.loginUser(withEmail: emailField.text!, andPassword: passwordField.text!) { (success, loginError) in
                 if success {
+                    print("Successfully logged in user.")
                     self.dismiss(animated: true, completion: nil)
                 } else {
                     print("Could not login: \(String(describing: loginError?.localizedDescription))")
+                    
                 }
             }
             
             AuthService.instance.registerUser(withEmail: self.emailField.text!, andPassword: self.passwordField.text!) { (success, registrationError) in
                 if success {
-                    AuthService.instance.loginUser(withEmail: self.emailField.text!, andPassword: self.passwordField.text!, loginComplete: { (success, nil) in
-                        print("Successfully registered user")
-                    })
+                    print("Successfully registered user.")
+                    AuthService.instance.loginUser(withEmail: self.emailField.text!, andPassword: self.passwordField.text!) { (success, nil) in
+                        print("Successfully logged in new user")
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 } else {
                     print("Registration error: \(String(describing: registrationError?.localizedDescription))")
                 }
             }
+            
+            
         }
     }
     
