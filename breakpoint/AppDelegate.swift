@@ -25,12 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController?.present(authVC, animated: true, completion: nil)
         }
         
-//        do {
-//            try Auth.auth().signOut()
-//        } catch {
-//            debugPrint("Error logging out: \(error.localizedDescription)")
-//        }
-        
         return true
     }
 
