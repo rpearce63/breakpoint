@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MeVC: UIViewController {
 
@@ -16,11 +17,20 @@ class MeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = Auth.auth().currentUser
+        emailLbl.text = user?.email
 
     }
 
     @IBAction func signOutBtnPressed(_ sender: Any) {
-        
+        do {
+            try Auth.auth().signOut()
+            debugPrint("Successfully logged out user")
+            let authVC = storyboard?.instantiateViewController(withIdentifier: "AuthVC") as? AuthVC
+            present(authVC!, animated: true, completion: nil)
+        } catch {
+            debugPrint("Error logging out: \(error.localizedDescription)")
+        }
     }
     
 }

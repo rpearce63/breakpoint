@@ -27,7 +27,8 @@ class LoginVC: UIViewController {
             AuthService.instance.loginUser(withEmail: emailField.text!, andPassword: passwordField.text!) { (success, loginError) in
                 if success {
                     print("Successfully logged in user.")
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
+                    self.dismissToMainView()
                 } else {
                     print("Could not login: \(String(describing: loginError?.localizedDescription))")
                     
@@ -39,7 +40,7 @@ class LoginVC: UIViewController {
                     print("Successfully registered user.")
                     AuthService.instance.loginUser(withEmail: self.emailField.text!, andPassword: self.passwordField.text!) { (success, nil) in
                         print("Successfully logged in new user")
-                        self.dismiss(animated: true, completion: nil)
+                        self.dismissToMainView()
                     }
                 } else {
                     print("Registration error: \(String(describing: registrationError?.localizedDescription))")
@@ -48,6 +49,11 @@ class LoginVC: UIViewController {
             
             
         }
+    }
+    
+    func dismissToMainView() {
+        let mainVC = storyboard?.instantiateViewController(withIdentifier: "MainVC")
+        present(mainVC!, animated: true, completion: nil)
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
