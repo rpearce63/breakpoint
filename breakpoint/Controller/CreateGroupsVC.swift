@@ -21,6 +21,8 @@ class CreateGroupsVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        emailSearchTextField.delegate = self
+        emailSearchTextField.addTarget(self, action: <#T##Selector#>, for: <#T##UIControlEvents#>)
     }
 
     @IBAction func doneBtnPressed(_ sender: Any) {
@@ -47,5 +49,9 @@ extension CreateGroupsVC: UITableViewDelegate, UITableViewDataSource {
         userCell.configureCell(profileImage: profileImage!, email: "marty@bttf.com", isSelected: true)
         return userCell
     }
+    
+}
+
+extension CreateGroupsVC: UITextFieldDelegate {
     
 }
