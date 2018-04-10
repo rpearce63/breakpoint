@@ -21,6 +21,9 @@
 		1D1AA643207A7EFD005E8DCA /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AA642207A7EFD005E8DCA /* ShadowView.swift */; };
 		1D1AA645207A8455005E8DCA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AA644207A8455005E8DCA /* AuthService.swift */; };
 		1D1AA647207B91BB005E8DCA /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AA646207B91BB005E8DCA /* MeVC.swift */; };
+		1D1AA649207C3F7C005E8DCA /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AA648207C3F7C005E8DCA /* UIViewExt.swift */; };
+		1D1AA64B207C475C005E8DCA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AA64A207C475C005E8DCA /* FeedCell.swift */; };
+		1D1AA64D207C4912005E8DCA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AA64C207C4912005E8DCA /* Message.swift */; };
 		4D9B3066207BEE27001EE832 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B3065207BEE27001EE832 /* CreatePostVC.swift */; };
 		4DDDF3C0207BB0AF00F23F0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DDDF3BF207BB0AF00F23F0C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -41,6 +44,9 @@
 		1D1AA642207A7EFD005E8DCA /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1D1AA644207A8455005E8DCA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1D1AA646207B91BB005E8DCA /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
+		1D1AA648207C3F7C005E8DCA /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExt.swift; path = breakpoint/Controller/UIViewExt.swift; sourceTree = SOURCE_ROOT; };
+		1D1AA64A207C475C005E8DCA /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		1D1AA64C207C4912005E8DCA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = breakpoint/View/Message.swift; sourceTree = SOURCE_ROOT; };
 		1F32218B71740B2BF4E627CB /* Pods_breakpoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breakpoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9B3065207BEE27001EE832 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		4DDDF3BF207BB0AF00F23F0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 			children = (
 				1D1AA640207A7B65005E8DCA /* insetTextField.swift */,
 				1D1AA642207A7EFD005E8DCA /* ShadowView.swift */,
+				1D1AA64A207C475C005E8DCA /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 		1D1AA637207A66B9005E8DCA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D1AA64C207C4912005E8DCA /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 		1D1AA638207A66BE005E8DCA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1D1AA648207C3F7C005E8DCA /* UIViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1AA649207C3F7C005E8DCA /* UIViewExt.swift in Sources */,
+				1D1AA64B207C475C005E8DCA /* FeedCell.swift in Sources */,
 				1D1AA647207B91BB005E8DCA /* MeVC.swift in Sources */,
 				1D1AA63D207A7A95005E8DCA /* AuthVC.swift in Sources */,
 				1D1AA641207A7B65005E8DCA /* insetTextField.swift in Sources */,
@@ -305,6 +316,7 @@
 				1D1AA62020797EC3005E8DCA /* AppDelegate.swift in Sources */,
 				1D1AA62220797EC3005E8DCA /* FeedVC.swift in Sources */,
 				1D1AA63B207A66DF005E8DCA /* DataService.swift in Sources */,
+				1D1AA64D207C4912005E8DCA /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,8 +450,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
