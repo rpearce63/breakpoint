@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateGroupsVC: UIViewController {
 
@@ -26,6 +27,7 @@ class CreateGroupsVC: UIViewController {
         tableView.dataSource = self
         emailSearchTextField.delegate = self
         emailSearchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +48,20 @@ class CreateGroupsVC: UIViewController {
     }
     
     @IBAction func doneBtnPressed(_ sender: Any) {
+        if titleTextField.text != "" && descriptionTextField.text != "" {
+            DataService.instance.getIds(forUsernams: chosenUserArray) { (idArray) in
+                var userIds = idArray
+                userIds.append((Auth.auth().currentUser?.uid)!)
+                
+                DataService.instance.createGroup(withTitle: self.titleTextField.text!, andDescription: self.descriptionTextField.text!, forUserIds: userIds, handler: { (groupCreated) in
+                    if groupCreated {
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        print("Group could not be created. Please try again.")
+                    }
+                })
+            }
+        }
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
