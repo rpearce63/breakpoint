@@ -26,6 +26,11 @@ class CreatePostVC: UIViewController {
         view.addGestureRecognizer(tap)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.emailLbl.text = Auth.auth().currentUser?.email
+    }
+    
     @objc func handleTap(){
         self.view.endEditing(true)
     }

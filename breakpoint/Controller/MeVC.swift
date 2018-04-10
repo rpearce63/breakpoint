@@ -17,20 +17,27 @@ class MeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let user = Auth.auth().currentUser
-        emailLbl.text = user?.email
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.emailLbl.text = Auth.auth().currentUser?.email
     }
 
     @IBAction func signOutBtnPressed(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            debugPrint("Successfully logged out user")
-            let authVC = storyboard?.instantiateViewController(withIdentifier: "AuthVC") as? AuthVC
-            present(authVC!, animated: true, completion: nil)
-        } catch {
-            debugPrint("Error logging out: \(error.localizedDescription)")
+        let logoutPopup = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { (buttonTapped) in
+            do {
+                try Auth.auth().signOut()
+                let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthVC") as? AuthVC
+                self.present(authVC!, animated: true, completion: nil)
+            } catch {
+                debugPrint(error)
+            }
         }
+        logoutPopup.addAction(logoutAction)
+        
+        present(logoutPopup, animated: true, completion: nil)
     }
     
 }
