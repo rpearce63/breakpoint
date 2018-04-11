@@ -11,9 +11,9 @@ import Firebase
 
 class CreateGroupsVC: UIViewController {
 
-    @IBOutlet weak var titleTextField: insetTextField!
-    @IBOutlet weak var descriptionTextField: insetTextField!
-    @IBOutlet weak var emailSearchTextField: insetTextField!
+    @IBOutlet weak var titleTextField: InsetTextField!
+    @IBOutlet weak var descriptionTextField: InsetTextField!
+    @IBOutlet weak var emailSearchTextField: InsetTextField!
     @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var groupMemberLbl: UILabel!
