@@ -30,6 +30,7 @@
 		4D71AA56207D4A6B00052E51 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D71AA55207D4A6B00052E51 /* Group.swift */; };
 		4D71AA58207D560400052E51 /* GroupFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D71AA57207D560400052E51 /* GroupFeedCell.swift */; };
 		4D71AA5A207D567B00052E51 /* GroupFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D71AA59207D567B00052E51 /* GroupFeedVC.swift */; };
+		4D71AA5C207E54A100052E51 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D71AA5B207E54A100052E51 /* UIViewControllerExt.swift */; };
 		4D9B3066207BEE27001EE832 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B3065207BEE27001EE832 /* CreatePostVC.swift */; };
 		4DDDF3C0207BB0AF00F23F0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DDDF3BF207BB0AF00F23F0C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		4D71AA55207D4A6B00052E51 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Group.swift; path = breakpoint/View/Group.swift; sourceTree = SOURCE_ROOT; };
 		4D71AA57207D560400052E51 /* GroupFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedCell.swift; sourceTree = "<group>"; };
 		4D71AA59207D567B00052E51 /* GroupFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedVC.swift; sourceTree = "<group>"; };
+		4D71AA5B207E54A100052E51 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewControllerExt.swift; path = breakpoint/Controller/UIViewControllerExt.swift; sourceTree = SOURCE_ROOT; };
 		4D9B3065207BEE27001EE832 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		4DDDF3BF207BB0AF00F23F0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8FE14AD6C9D5C2112418100 /* Pods-breakpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breakpoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-breakpoint/Pods-breakpoint.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				1D1AA648207C3F7C005E8DCA /* UIViewExt.swift */,
+				4D71AA5B207E54A100052E51 /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				1D1AA647207B91BB005E8DCA /* MeVC.swift in Sources */,
 				4D71AA54207D467A00052E51 /* GroupCell.swift in Sources */,
 				1D1AA63D207A7A95005E8DCA /* AuthVC.swift in Sources */,
+				4D71AA5C207E54A100052E51 /* UIViewControllerExt.swift in Sources */,
 				1D1AA641207A7B65005E8DCA /* InsetTextField.swift in Sources */,
 				4D71AA5A207D567B00052E51 /* GroupFeedVC.swift in Sources */,
 				4D71AA58207D560400052E51 /* GroupFeedCell.swift in Sources */,
